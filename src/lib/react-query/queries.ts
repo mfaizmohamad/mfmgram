@@ -27,6 +27,7 @@ import {
   deleteSavedPost,
 } from "@/lib/appwrite/api";
 import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "@/types";
+import { any } from "zod";
 
 // ============================================================
 // AUTH QUERIES
@@ -55,10 +56,13 @@ export const useSignOutAccount = () => {
 // POST QUERIES
 // ============================================================
 
+
+
 export const useGetPosts = () => {
   return useInfiniteQuery({
     queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
     queryFn: getInfinitePosts as any,
+    initialPageParam: (any),
     getNextPageParam: (lastPage: any) => {
       // If there's no data, there are no more pages.
       if (lastPage && lastPage.documents.length === 0) {
