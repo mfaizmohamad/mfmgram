@@ -4,6 +4,12 @@ import { Button } from "@/components/ui";
 import { Loader } from "@/components/shared";
 import { GridPostList, PostStats } from "@/components/shared";
 
+import backLogo from '../../../public/assets/icons/back.svg';
+import edit from '../../../public/assets/icons/edit.svg';
+import deleteLogo from '../../../public/assets/icons/delete.svg';
+
+
+
 import {
   useGetPostById,
   useGetUserPosts,
@@ -40,7 +46,7 @@ const PostDetails = () => {
           variant="ghost"
           className="shad-button_ghost">
           <img
-            src={"/assets/icons/back.svg"}
+            src={backLogo}
             alt="back"
             width={24}
             height={24}
@@ -62,7 +68,7 @@ const PostDetails = () => {
           <div className="post_details-info">
             <div className="flex-between w-full">
               <Link
-                to={`/profile/${post?.creator.$id}`}
+                to={`/mfmgram/profile/${post?.creator.$id}`}
                 className="flex items-center gap-3">
                 <img
                   src={
@@ -90,10 +96,10 @@ const PostDetails = () => {
 
               <div className="flex-center gap-4">
                 <Link
-                  to={`/update-post/${post?.$id}`}
+                  to={`/mfmgram/update-post/${post?.$id}`}
                   className={`${user.id !== post?.creator.$id && "hidden"}`}>
                   <img
-                    src={"/assets/icons/edit.svg"}
+                    src={edit}
                     alt="edit"
                     width={24}
                     height={24}
@@ -107,7 +113,7 @@ const PostDetails = () => {
                     user.id !== post?.creator.$id && "hidden"
                   }`}>
                   <img
-                    src={"/assets/icons/delete.svg"}
+                    src={deleteLogo}
                     alt="delete"
                     width={24}
                     height={24}

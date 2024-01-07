@@ -8,7 +8,8 @@ import { useSignOutAccount } from "@/lib/react-query/queries";
 import { useUserContext, INITIAL_USER } from "@/context/AuthContext";
 
 import logoutLogo from '../../../public/assets/icons/logout.svg';
-import Logo from '../../../public/assets/images/logo.svg';
+import Logo from '../../../public/mfmlogo.png';
+
 
 const LeftSidebar = () => {
   const navigate = useNavigate();
@@ -30,12 +31,11 @@ const LeftSidebar = () => {
   return (
     <nav className="leftsidebar">
       <div className="flex flex-col gap-11">
-        <Link to="/" className="flex gap-3 items-center">
+        <Link to="/mfmgram/" className="flex gap-3 items-center">
           <img
             src={Logo}
             alt="logo"
-            width={170}
-            height={36}
+            className="w-[70px] h-[50px]"
           />
         </Link>
 
@@ -44,7 +44,7 @@ const LeftSidebar = () => {
             <Loader />
           </div>
         ) : (
-          <Link to={`/profile/${user.id}`} className="flex gap-3 items-center">
+          <Link to={`/mfmgram/profile/${user.id}`} className="flex gap-3 items-center">
             <img
               src={user.imageUrl || "/assets/icons/profile-placeholder.svg"}
               alt="profile"

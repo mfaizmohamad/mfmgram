@@ -4,6 +4,8 @@ import { Loader } from "@/components/shared";
 import PostForm from "@/components/forms/PostForm";
 import { useGetPostById } from "@/lib/react-query/queries";
 
+import editLogo from '../../../public/assets/icons/edit.svg';
+
 const EditPost = () => {
   const { id } = useParams();
   const { data: post, isLoading } = useGetPostById(id);
@@ -20,7 +22,7 @@ const EditPost = () => {
       <div className="common-container">
         <div className="flex-start gap-3 justify-start w-full max-w-5xl">
           <img
-            src="/assets/icons/edit.svg"
+            src={editLogo}
             width={36}
             height={36}
             alt="edit"

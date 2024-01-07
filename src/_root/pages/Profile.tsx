@@ -13,6 +13,11 @@ import { useUserContext } from "@/context/AuthContext";
 import { useGetUserById } from "@/lib/react-query/queries";
 import { GridPostList, Loader } from "@/components/shared";
 
+import edit from '../../../public/assets/icons/edit.svg';
+import post from '../../../public/assets/icons/posts.svg';
+import like from '../../../public/assets/icons/like.svg';
+
+
 interface StabBlockProps {
   value: string | number;
   label: string;
@@ -74,12 +79,12 @@ const Profile = () => {
           <div className="flex justify-center gap-4">
             <div className={`${user.id !== currentUser.$id && "hidden"}`}>
               <Link
-                to={`/update-profile/${currentUser.$id}`}
+                to={`/mfmgram/update-profile/${currentUser.$id}`}
                 className={`h-12 bg-dark-4 px-5 text-light-1 flex-center gap-2 rounded-lg ${
                   user.id !== currentUser.$id && "hidden"
                 }`}>
                 <img
-                  src={"/assets/icons/edit.svg"}
+                  src={edit}
                   alt="edit"
                   width={20}
                   height={20}
@@ -103,10 +108,10 @@ const Profile = () => {
           <Link
             to={`/profile/${id}`}
             className={`profile-tab rounded-l-lg ${
-              pathname === `/profile/${id}` && "!bg-dark-3"
+              pathname === `/mfmgram/profile/${id}` && "!bg-dark-3"
             }`}>
             <img
-              src={"/assets/icons/posts.svg"}
+              src={post}
               alt="posts"
               width={20}
               height={20}
@@ -116,10 +121,10 @@ const Profile = () => {
           <Link
             to={`/profile/${id}/liked-posts`}
             className={`profile-tab rounded-r-lg ${
-              pathname === `/profile/${id}/liked-posts` && "!bg-dark-3"
+              pathname === `/mfmgram/profile/${id}/liked-posts` && "!bg-dark-3"
             }`}>
             <img
-              src={"/assets/icons/like.svg"}
+              src={like}
               alt="like"
               width={20}
               height={20}
@@ -135,7 +140,7 @@ const Profile = () => {
           element={<GridPostList posts={currentUser.posts} showUser={false} />}
         />
         {currentUser.$id === user.id && (
-          <Route path="/liked-posts" element={<LikedPosts />} />
+          <Route path="/mfmgram/liked-posts" element={<LikedPosts />} />
         )}
       </Routes>
       <Outlet />

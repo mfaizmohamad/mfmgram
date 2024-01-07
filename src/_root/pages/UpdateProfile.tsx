@@ -19,6 +19,8 @@ import { ProfileValidation } from "@/lib/validation";
 import { useUserContext } from "@/context/AuthContext";
 import { useGetUserById, useUpdateUser } from "@/lib/react-query/queries";
 
+import edit from '../../../public/assets/icons/edit.svg';
+
 const UpdateProfile = () => {
   const { toast } = useToast();
   const navigate = useNavigate();
@@ -70,7 +72,7 @@ const UpdateProfile = () => {
       bio: updatedUser?.bio,
       imageUrl: updatedUser?.imageUrl,
     });
-    return navigate(`/profile/${id}`);
+    return navigate(`/mfmgram/profile/${id}`);
   };
 
   return (
@@ -78,7 +80,7 @@ const UpdateProfile = () => {
       <div className="common-container">
         <div className="flex-start gap-3 justify-start w-full max-w-5xl">
           <img
-            src="/assets/icons/edit.svg"
+            src={edit}
             width={36}
             height={36}
             alt="edit"

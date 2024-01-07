@@ -6,7 +6,7 @@ import { useUserContext } from "@/context/AuthContext";
 import { useSignOutAccount } from "@/lib/react-query/queries";
 
 import logoutLogo from '../../../public/assets/icons/logout.svg';
-import Logo from '../../../public/assets/images/logo.svg';
+import Logo from '../../../public/mfmlogo.png';
 
 const Topbar = () => {
   const navigate = useNavigate();
@@ -24,8 +24,7 @@ const Topbar = () => {
           <img
             src={Logo}
             alt="logo"
-            width={130}
-            height={325}
+            className="w-[70px] h-[50px]"
           />
         </Link>
 
