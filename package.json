@@ -1,6 +1,6 @@
 {
   "homepage": "https://mfaizmohamad.github.io/mfmgram/",
-  "proxy": "https://cloud.appwrite.io/v1",
+  "proxy": "https://mfaizmohamad.github.io/mfmgram/",
   "name": "mfmgram",
   "private": true,
   "version": "0.0.0",

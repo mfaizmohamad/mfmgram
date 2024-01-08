@@ -13,7 +13,7 @@ export default defineConfig({
 
   server: {
     proxy: {
-      '/api':"https://cloud.appwrite.io/v1"
+      '/api':"https://mfaizmohamad.github.io/mfmgram/"
     }
   },
 })
